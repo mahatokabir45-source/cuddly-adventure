@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Friendship Card for Dipika Raii</title>
+  <title>Friendship Card for Ra Ni</title>
   <style>
     body {
       margin: 0;
@@ -12,13 +12,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
       font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
     }
 
     .card {
-      width: 300px;
-      height: 200px;
+      width: 320px;
+      height: 220px;
       perspective: 1000px;
     }
 
@@ -27,7 +28,7 @@
       height: 100%;
       position: relative;
       transform-style: preserve-3d;
-      transition: transform 1s;
+      transition: transform 1s ease-in-out;
     }
 
     .card:hover .card-inner {
@@ -39,65 +40,104 @@
       width: 100%;
       height: 100%;
       backface-visibility: hidden;
-      border-radius: 15px;
+      border-radius: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      padding: 25px;
+      box-shadow: 0 0 25px rgba(255, 105, 180, 0.5);
+      border: 4px solid transparent;
+      background-clip: padding-box;
+      animation: glow 3s infinite alternate;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 20px #ff6b6b; }
+      to   { box-shadow: 0 0 40px #ffcc70; }
     }
 
     .card-front {
       background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      flex-direction: column;
-      color: #fff;
+      color: white;
     }
 
     .card-front h1 {
-      font-size: 22px;
+      font-size: 26px;
       margin: 0;
     }
 
     .card-front p {
       margin-top: 10px;
-      font-size: 14px;
+      font-size: 16px;
     }
 
     .card-back {
-      background: white;
+      background: linear-gradient(135deg, #a18cd1, #fbc2eb);
       transform: rotateY(180deg);
-      text-align: center;
-      flex-direction: column;
+      color: #fff;
     }
 
     .card-back h2 {
-      color: #ff6b6b;
+      font-size: 24px;
       margin-bottom: 10px;
     }
 
     .card-back p {
       font-size: 16px;
-      color: #444;
+      line-height: 1.4;
+    }
+
+    /* floating emojis */
+    .emoji {
+      position: absolute;
+      font-size: 24px;
+      opacity: 0.8;
+      animation: float 12s linear infinite;
+    }
+
+    .emoji:nth-child(1) { left: 10%; animation-duration: 10s; }
+    .emoji:nth-child(2) { left: 25%; animation-duration: 12s; }
+    .emoji:nth-child(3) { left: 50%; animation-duration: 14s; }
+    .emoji:nth-child(4) { left: 70%; animation-duration: 11s; }
+    .emoji:nth-child(5) { left: 85%; animation-duration: 15s; }
+
+    @keyframes float {
+      0% { bottom: -50px; opacity: 0; }
+      50% { opacity: 1; }
+      100% { bottom: 110%; opacity: 0; }
     }
   </style>
 </head>
 <body>
+  <!-- Floating emojis -->
+  <div class="emoji">🌸</div>
+  <div class="emoji">⭐</div>
+  <div class="emoji">💖</div>
+  <div class="emoji">🌟</div>
+  <div class="emoji">✨</div>
+
+  <!-- Friendship Card -->
   <div class="card">
     <div class="card-inner">
       <!-- Front -->
       <div class="card-front">
         <h1>For My Friend</h1>
-        <p>Dipika Raii 💕</p>
+        <p>Ra Ni 💕</p>
       </div>
       <!-- Back -->
       <div class="card-back">
-        <h2>Hello Dipika 👋</h2>
-        <p>You’re an awesome friend! 🌸<br>Always stay happy and keep smiling 😄</p>
+        <h2>Hello Ra Ni 👋</h2>
+        <p>You’re an amazing friend! 🌸<br>
+        Keep smiling & shining always ✨</p>
       </div>
     </div>
   </div>
 </body>
 </html>
+
+
 
 
 
